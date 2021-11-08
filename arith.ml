@@ -1,14 +1,5 @@
 (*
-   Programming Homework 1: Completing the ARITH Interpreter
-   
-   In this assignment, you are to complete the ARITH Interpreter so that it is correct
-   in the sense formulated in Doggie Bag 10, Theorem 1.1. In particular, you will need
-   to complete redx so that it is complete for arithmetic expression form reduction.
-   Completed assignments should be an executable OCaml code file, that can be read into
-   the OCaml interpreter (ocaml) with the #use directive, for example if you've started
-   ocaml in the directory where arith.ml resides you would do:
-      # #use "arith.ml";;
-   This assignment template as provided is an executable OCaml code file.
+   The ARITH interpreter (TEMPLATE): back-end and pretty printing. 
  *)
 
 

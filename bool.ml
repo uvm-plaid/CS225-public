@@ -14,7 +14,6 @@ type expr =
   out : true iff e is a value
 *)
 let isval e = match e with 
-     Nat(_) -> true
    | Bool(_) -> true
    | _ -> false
 
@@ -45,7 +44,6 @@ let rec redx e = match e with
 *)
 let rec redxs e = match e with 
      Bool(b) -> Bool(b)
-   | Nat(n) -> Nat(n)  
    | _ -> redxs (redx e)
 
 open Printf;;

@@ -18,8 +18,6 @@ let isval e = match e with
    | Bool(_) -> true
    | _ -> false
 
-exception StuckExpr
-
 (* 
    redx : expr -> expr
    in : AST [[e]]
@@ -39,7 +37,6 @@ let rec redx e = match e with
    | Not(e) -> Not(redx e)
    | And(e1,e2) -> if isval e1 then And(e1, redx e2) else And(redx e1, e2)
    | Or(e1, e2) -> if isval e1 then Or(e1, redx e2) else Or(redx e1, e2)
-   | _ -> raise StuckExpr
 
 (*
    redxs : expr -> expr

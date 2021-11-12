@@ -22,7 +22,6 @@ let isval e = match e with
    in : AST [[e]]
    out : AST [[e']] such that e -> e' in the operational semantics
    side effect : exception NotReducible raised if [[e]] isn't reducible in implementation.
-   NOTE : This function is incomplete as given.
 *)
 let rec redx e = match e with
      Not(Bool(false)) -> Bool(true) 

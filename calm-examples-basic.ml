@@ -65,12 +65,11 @@ let e1 = Let(Ident("compose"), compose,
 	        Appl(Appl(Appl(Var(Ident("compose")), Var(Ident("plus2"))),
 			  Var(Ident("plus4"))), Nat(12)))));;
 
-
-(*
 (*
   (Fun f . (Fun g . (Fun x . f (g x)))) (Fun x . x + 2) (Fun x . x + 4)
 *)
 let plus6 = Appl(Appl(compose, plus2), plus4);;
+
 (*
   (Fun f . (Fun g . (Fun x . f (g x)))) (Fun x . x + 2) (Fun x . x + 4) 2
 *)

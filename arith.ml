@@ -14,8 +14,24 @@
    This assignment template as provided is an executable OCaml code file.
  *)
 
-
-(* The AST datatype for ARITH *)
+(*
+   Abstract Syntax
+   ---------------
+  
+   The expr datatype defines the ASTs for CatML. The mapping from CatML concrete syntax
+   to abstract syntax is as follows, in full detail. This mapping is implemented by the
+   parser in the online tool at http://ceskalka.w3.uvm.edu/225/catml/catml.php.
+ 
+   [[True]] = Bool(true)
+   [[False]] = Bool(false)
+   [[n]] = Nat(n)           for any natural number n
+   [[x]] = Var(Ident("x"))       for any variable x
+   [[e1 + e2]] = Plus([[e1]], [[e2]])
+   [[e1 - e2]] = Minus([[e1]], [[e2]])
+   [[e1 And e2]] = And([[e1]], [[e2]])
+   [[e1 Or e2]] = Or([[e1]], [[e2]])
+   [[Not e]] = Not([[e]])
+*)
 type expr =
      (* boolean expression forms *)
      Bool of bool | And of expr * expr | Or of expr * expr | Not of expr   

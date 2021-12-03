@@ -25,7 +25,6 @@
    [[True]] = Bool(true)
    [[False]] = Bool(false)
    [[n]] = Nat(n)           for any natural number n
-   [[x]] = Var(Ident("x"))       for any variable x
    [[e1 + e2]] = Plus([[e1]], [[e2]])
    [[e1 - e2]] = Minus([[e1]], [[e2]])
    [[e1 And e2]] = And([[e1]], [[e2]])

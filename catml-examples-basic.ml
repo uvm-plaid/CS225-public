@@ -43,9 +43,9 @@ let plus4 =  Function (Ident("x"), Plus(Var(Ident("x")), Nat(4)));;
 
 (*
  Let compose = (Fun f . (Fun g . (Fun x . f (g x)))) In
- Let plus2 = (Fun x . x + 2) In
- Let plus4 = (Fun x . x + 4) In
- compose plus2 plus4
+ Let plustwo = (Fun x . x + 2) In
+ Let plusfour = (Fun x . x + 4) In
+ ((compose plustwo) plusfour) 
 *)
 let plus6 = Let(Ident("compose"), compose,
 	    Let(Ident("plus2"), plus2,
@@ -55,9 +55,9 @@ let plus6 = Let(Ident("compose"), compose,
 
 (*
  Let compose = (Fun f . (Fun g . (Fun x . f (g x)))) In
- Let plus2 = (Fun x . x + 2) In
- Let plus4 = (Fun x . x + 4) In
- compose plus2 plus4 12
+ Let plustwo = (Fun x . x + 2) In
+ Let plusfour = (Fun x . x + 4) In
+ ((compose plustwo) plusfour) 12
 *)
 let e1 = Let(Ident("compose"), compose,
 	 Let(Ident("plus2"), plus2,

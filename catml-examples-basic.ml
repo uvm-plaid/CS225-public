@@ -66,12 +66,12 @@ let e1 = Let(Ident("compose"), compose,
 			  Var(Ident("plus4"))), Nat(12)))));;
 
 (*
-  (Fun f . (Fun g . (Fun x . f (g x)))) (Fun x . x + 2) (Fun x . x + 4)
+  ((Fun f . (Fun g . (Fun x . f (g x)))) (Fun x . x + 2)) (Fun x . x + 4)
 *)
 let plus6 = Appl(Appl(compose, plus2), plus4);;
 
 (*
-  (Fun f . (Fun g . (Fun x . f (g x)))) (Fun x . x + 2) (Fun x . x + 4) 2
+  (((Fun f . (Fun g . (Fun x . f (g x)))) (Fun x . x + 2)) (Fun x . x + 4)) 2
 *)
 let e = Appl(plus6, Nat(2));;
 *)
@@ -82,6 +82,6 @@ let e = Appl(plus6, Nat(2));;
 let selfref = Function(Ident("x"), Appl(Var(Ident("x")), Var(Ident("x"))));;
 
 (*
-  (Fun x . x x)(Fun x . x x)
+  (Fun x . x x) (Fun x . x x)
 *)
 let omega = Appl(selfref, selfref);;

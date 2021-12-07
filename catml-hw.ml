@@ -115,7 +115,8 @@ let rec isval e = match e with
    | Bool(_) -> true
    | _ -> raise AssignmentIncomplete (* COMPLETE ME *)
 
-exception NotReducible
+exception StuckExpr
+
 (*
    Single step reduction
    ---------------------

@@ -1,15 +1,35 @@
 (*
-   Programming Assignment 2: Completing the CatML interpreter.
-   In this OCaml code file you will find the beginning of various functions with
-   COMPLETE ME tags in the comments, that you must complete to obtain a *correct*
+   Homework 5: Completing the CatML interpreter.
+   
+   DIRECTIONS: In this OCaml code file you will find the beginning of various functions 
+   with COMPLETE ME tags in the comments, that you must complete to obtain a *correct*
    interpreter for the CatML language.
+   
    Both the tracer and stepper functions (with pretty printing) have been completed
    for you and can be used for testing examples as you work on the assignment. Example
    expressions for testing can be found in the course github repository. The online
-   tool at goatgoose can be used to easily generate ASTs for additional examples.
-   You should submit this file once completed. Your submission must be executable
-   OCaml code.
-*)
+   interpreter at http://ceskalka.w3.uvm.edu/225/catml/catml.php can be used to easily 
+   generate ASTs for additional examples. You should submit this file once completed. 
+   Your submission must be executable OCaml code.
+   
+   GRADING: Your code will be graded for correctness (in the sense of Lecture Notes 10, 
+   Theorem 1.1), by both direct review of code and evaluation of your function definitions 
+   on suites of test cases. The breakdown will be as follows:
+   
+   100 total points
+   40 points for syntax and type correctness with a baseline of effort (i.e., you worked
+      on a solution which is valid OCaml code. Note that just handing in this file as given 
+      does not count as a baseline of effort).
+   6 points for style (formatting, comments, elegance).
+   54 points for formal correctness of definitions as measured by test cases: 
+     - 10 points for expression closure (closed).
+     - 44 points for reduction (redx, subst, isval).
+     
+   Test cases will be of low to high complexity, from simple arithmetic expressions to recursive 
+   function definitions (using both fixpoint combinators and the Fix construct). **Only Graduate 
+   Students will be tested on evaluation of structured data, i.e., pairs**. In all cases, evaluation 
+   on test cases provided in the CS225-public repo will be a great indicator of your progress.
+*) 
 
 (*
    Abstract Syntax

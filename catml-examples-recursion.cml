@@ -32,3 +32,27 @@ summate 6
 (* Naive fibonacci using primitive Fix *)
 Let fib = (Fix fib . n . If n = 0 Then 0 Else If n = 1 Then 1 Else (fib (n-1)) + (fib (n-2))) In 
 fib 6
+
+(* Church encoding of lists using pairs, and higher-order list functions (member and map) *)
+Let nil = (0,0)
+In
+Let isnil = (Fun x . (Fst x) = 0)
+In 
+Let cons = (Fun x . Fun l . (1, (x, l)))
+In 
+Let head = (Fun l . (Fst(Snd l)))
+In 
+Let tail = (Fun l . (Snd(Snd l)))
+In
+Let member =  
+    (Fix mem . x . (Fun l .
+			If (isnil l) Then False Else
+			If (head l) = x Then True Else
+			(mem x) (tail l)))
+In
+Let map =
+  (Fix m . f . Fun l .If (isnil l) Then l Else (cons (f (head l))) ((m f) (tail l)))
+In
+Let a = (cons 10) ((cons 2) ((cons 3) nil))
+In
+((member 4) a, (member 4) ((map (Fun x . x + 2)) a))
